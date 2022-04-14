@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const MenuContainer = styled.menu`
-  width: 200px;
+  width: 8vw;
   padding: 30px 30px;
   height: 100vh;
   position: fixed;
