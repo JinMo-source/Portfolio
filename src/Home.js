@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Contact from "./Contact";
-import Menu from "./Menu";
 import Myportfolio from "./Myportfolio";
 
 const MainContainer = styled.div`
@@ -172,7 +171,6 @@ const Line = styled.div`
 function Home() {
   return (
     <MainContainer>
-      <Menu />
       <Line
         circle="150px"
         circleLeft="-130px"
@@ -202,7 +200,7 @@ function Home() {
         colors="#f5f5dc"
       />
       <SectionContainer text="Intro.">
-        <LeftTextBox top="50vh" left="12vw" margin="-12.5vh">
+        <LeftTextBox top="50vh" left="13vw" margin="-12.5vh">
           <BigIntroMyself>
             Frontend
             <br />
@@ -212,12 +210,12 @@ function Home() {
             안녕하세요, 발전하는 프론트엔드 개발자 박진모입니다.
           </SmallIntroMyself>
         </LeftTextBox>
-        <IntroImgBox max="500px" top="50vh" right="15vw">
+        <IntroImgBox max="500px" top="50vh" right="13vw">
           <img src="image/intro.png" alt="intro" />
         </IntroImgBox>
       </SectionContainer>
       <SectionContainer text="About.">
-        <LeftTextBox top="30vh" left="12vw" margin="-10vh">
+        <LeftTextBox top="30vh" left="13vw" margin="-10vh">
           <AboutMe>
             <h2>나를 소개합니다.</h2>
             <p>
@@ -246,7 +244,7 @@ function Home() {
             </p>
           </AboutMe>
         </LeftTextBox>
-        <IntroImgBox max="500px" top="43vh" right="15vw">
+        <IntroImgBox max="500px" top="43vh" right="13vw">
           <AboutImg src="image/about.png" alt="about" />
         </IntroImgBox>
       </SectionContainer>
@@ -262,7 +260,7 @@ function Home() {
             </div>
             <div>
               <p>나이</p>
-              <span>25세</span>
+              <span>1998.01.30 (25세)</span>
             </div>
             <div>
               <p>경력</p>

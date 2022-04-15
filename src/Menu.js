@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const MenuContainer = styled.menu`
   width: 8vw;
@@ -35,8 +36,18 @@ const NavigationBox = styled.ul`
   margin-top: -15vh;
   left: 0;
 `;
+const NavigationLink = styled(Link)`
+  &:hover {
+    transition: 0.5s;
+    color: #aaff00;
+  }
+  text-decoration: none;
+  color: #fff;
+`;
+
 const Navigation = styled.li`
   width: 100%;
+  font-weight: bold;
   padding: 2vh 0;
   cursor: pointer;
   border-top: 1px solid #333;
@@ -44,18 +55,29 @@ const Navigation = styled.li`
 `;
 
 function Menu() {
-  console.log();
   return (
     <MenuContainer>
       <LogoImgBox>
-        <LogoImg src="image/logo.png" alt="logo"></LogoImg>
+        <NavigationLink to={"/"}>
+          <LogoImg src="image/logo.png" alt="logo"></LogoImg>
+        </NavigationLink>
       </LogoImgBox>
       <NavigationBox>
-        <Navigation>Intro</Navigation>
-        <Navigation>About</Navigation>
-        <Navigation>Portfolio</Navigation>
-        <Navigation>Stack</Navigation>
-        <Navigation bottom="1px solid #333">Contact</Navigation>
+        <NavigationLink to="/intro">
+          <Navigation>Intro</Navigation>
+        </NavigationLink>
+        <NavigationLink to="/about">
+          <Navigation>About</Navigation>
+        </NavigationLink>
+        <Navigation>
+          <NavigationLink to="/portfolio">Portfolio</NavigationLink>
+        </Navigation>
+        <Navigation>
+          <NavigationLink to="/stack">Stack</NavigationLink>
+        </Navigation>
+        <Navigation bottom="1px solid #333">
+          <NavigationLink to="/contact">Contact</NavigationLink>
+        </Navigation>
       </NavigationBox>
     </MenuContainer>
   );
