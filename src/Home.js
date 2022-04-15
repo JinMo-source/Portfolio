@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Contact from "./Contact";
 import Menu from "./Menu";
 import Myportfolio from "./Myportfolio";
 
@@ -39,13 +40,16 @@ const SmallIntroMyself = styled.h2`
   padding-left: 6px;
 `;
 const IntroImgBox = styled.div`
+  max-width: ${(props) => props.max};
+  max-height: ${(props) => props.max};
   width: 30vw;
   height: 30vw;
+  text-align: center;
   border-radius: 50%;
   background: #fff;
   position: absolute;
-  top: 50vh;
-  right: 10vw;
+  top: ${(props) => props.top};
+  right: ${(props) => props.right};
   margin-top: -25vh;
 `;
 
@@ -70,29 +74,10 @@ const AboutMe = styled.div`
     }
   }
 `;
-const Line = styled.div`
-  &:before {
-    content: "";
-    display: block;
-    width: ${(props) => props.circle};
-    height: ${(props) => props.circle};
-    background: #333;
-    opacity: 0.2;
-    background: ${(props) => props.colors};
-    position: absolute;
-    top: ${(props) => props.top};
-    left: ${(props) => props.circleLeft};
-    border-radius: 50%;
-  }
-  position: relative;
-  width: 1px;
-  height: 100vh;
-  position: fixed;
-  background: #333;
-  top: 0;
-  left: ${(props) => props.left};
+const AboutImg = styled.img`
+  width: 100%;
+  display: block;
 `;
-
 const StackCotainer = styled.div`
   width: 92vw;
   height: 83vh;
@@ -147,7 +132,43 @@ const SkillPerscent = styled.div`
   left: 10vw;
   margin-top: 1px;
 `;
+const ContactText = styled.div`
+  text-align: center;
+  line-height: 20px;
+  h2 {
+    font-weight: bold;
+    font-size: 40px;
+  }
+  span {
+    font-size: 16px;
+  }
+  p {
+    margin-top: 10px;
+  }
+`;
 
+const Line = styled.div`
+  &:before {
+    content: "";
+    display: block;
+    width: ${(props) => props.circle};
+    height: ${(props) => props.circle};
+    background: #333;
+    opacity: 0.2;
+    background: ${(props) => props.colors};
+    position: absolute;
+    top: ${(props) => props.top};
+    left: ${(props) => props.circleLeft};
+    border-radius: 50%;
+  }
+  position: relative;
+  width: 1px;
+  height: 100vh;
+  position: fixed;
+  background: #333;
+  top: 0;
+  left: ${(props) => props.left};
+`;
 function Home() {
   return (
     <MainContainer>
@@ -191,7 +212,9 @@ function Home() {
             안녕하세요, 발전하는 프론트엔드 개발자 박진모입니다.
           </SmallIntroMyself>
         </LeftTextBox>
-        <IntroImgBox>123</IntroImgBox>
+        <IntroImgBox max="500px" top="50vh" right="15vw">
+          <img src="image/intro.png" alt="intro" />
+        </IntroImgBox>
       </SectionContainer>
       <SectionContainer text="About.">
         <LeftTextBox top="30vh" left="12vw" margin="-10vh">
@@ -223,6 +246,9 @@ function Home() {
             </p>
           </AboutMe>
         </LeftTextBox>
+        <IntroImgBox max="500px" top="43vh" right="15vw">
+          <AboutImg src="image/about.png" alt="about" />
+        </IntroImgBox>
       </SectionContainer>
       <SectionContainer text="My Portfolio">
         <Myportfolio />
@@ -267,6 +293,25 @@ function Home() {
             </Skill>
           </div>
         </StackCotainer>
+      </SectionContainer>
+      <SectionContainer text="Contact.">
+        <LeftTextBox top="50vh" left="16vw" margin="-5vh">
+          <ContactText>
+            <h2>Contact</h2>
+            <br />
+            <span>
+              소중한 시간을 저에게 사용을 해주셔서 봐주셔서 감사합니다.
+            </span>
+            <p>
+              Phone : 010-2477-1240
+              <br />
+              Email : qkrwslah12342@gmail.com
+            </p>
+          </ContactText>
+        </LeftTextBox>
+        <LeftTextBox top="42vh" left="58vw" margin="-10vh">
+          <Contact />
+        </LeftTextBox>
       </SectionContainer>
     </MainContainer>
   );
