@@ -21,13 +21,6 @@ const AboutMe = styled.div`
     }
   }
 
-  @media ${({ theme }) => theme.device.desktop} {
-    width: 500px;
-    p {
-      font-size: 13px;
-    }
-    background: red;
-  }
   @media ${({ theme }) => theme.device.labtop} {
     width: 400px;
     h2 {
@@ -38,20 +31,18 @@ const AboutMe = styled.div`
       font-size: 13px;
       line-height: 38px;
     }
-    background: red;
   }
 
-  @media ${({ theme }) => theme.device.tableL} {
+  @media ${({ theme }) => theme.device.tabletL} {
     width: 350px;
     h2 {
-      font-size: 17px;
+      font-size: 13px;
       margin-bottom: 5px;
     }
     p {
       font-size: 13px;
       line-height: 38px;
     }
-    background: red;
   }
 `;
 

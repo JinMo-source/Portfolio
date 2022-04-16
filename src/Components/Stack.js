@@ -14,6 +14,11 @@ const StackCotainer = styled.div`
     font-size: 23px;
     font-weight: bold;
   }
+  @media ${({ theme }) => theme.device.labtop} {
+    h2 {
+      padding: 10px 3vh;
+    }
+  }
 `;
 
 const SkillMyself = styled.div`
@@ -31,6 +36,18 @@ const SkillMyself = styled.div`
     p {
       font-size: 24px;
       padding: 20px 0;
+    }
+  }
+
+  @media ${({ theme }) => theme.device.labtop} {
+    height: 15vh;
+    font-size: 24px;
+    div {
+      width: 30.9999vw;
+      p {
+        font-size: 20px;
+        padding: 20px 0;
+      }
     }
   }
 `;
@@ -68,7 +85,7 @@ function Stack() {
   return loadingTime ? (
     <Loading />
   ) : (
-    <SectionContainer text="STACK">
+    <SectionContainer text="Stack">
       <StackCotainer>
         <SkillMyself>
           <div>

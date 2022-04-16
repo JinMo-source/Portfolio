@@ -13,6 +13,12 @@ export const SectionContainer = styled.section`
     font-size: 100px;
     color: #888;
     opacity: 0.2;
+    @media ${({ theme }) => theme.device.labtop} {
+      font-size: 80px;
+    }
+    @media ${({ theme }) => theme.device.tabletL} {
+      font-size: 50px;
+    }
   }
   width: 100vw;
   height: 100vh;

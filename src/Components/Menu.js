@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -14,8 +14,10 @@ const MenuContainer = styled.menu`
   bottom: 0;
   background: #181818;
   color: #fff;
-  @media ${({ theme }) => theme.device.tablet} {
-    display: none;
+
+  @media ${({ theme }) => theme.device.tabletS} {
+    transition: 1s ease;
+    left: -8vw;
   }
 `;
 const LogoImgBox = styled.div`
@@ -59,6 +61,7 @@ const Navigation = styled.li`
 `;
 
 function Menu() {
+  const [toggle, setToggle] = useState(true);
   return (
     <MenuContainer>
       <LogoImgBox>
