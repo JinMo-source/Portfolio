@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -17,7 +17,21 @@ const MenuContainer = styled.menu`
 
   @media ${({ theme }) => theme.device.tabletS} {
     transition: 1s ease;
-    left: -8vw;
+    left: ${(props) => props.left};
+  }
+`;
+const MenuBtn = styled.button`
+  width:30px;
+  height:30px;
+  position:fixed;
+  top:10px;
+  left:10px
+  background:red;
+  display:none;
+  background:red;
+  z-index:999;
+  @media ${({ theme }) => theme.device.tabletS} {
+    display:block;
   }
 `;
 const LogoImgBox = styled.div`
@@ -61,9 +75,26 @@ const Navigation = styled.li`
 `;
 
 function Menu() {
-  const [toggle, setToggle] = useState(true);
-  return (
-    <MenuContainer>
+  const [toggle, setToggle] = useState(false);
+  const [menuLeft, setMenuLeft] = useState("-8vw");
+
+  let currentSize = window.innerWidth;
+  const handleResize = () => {
+    currentSize < 1024 ? setToggle(true) : setToggle(false);
+  };
+  function handleOnClick() {
+    setToggle(false);
+    setMenuLeft("8vw");
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    currentSize < 1024 ? setToggle(true) : setToggle(false);
+  }, []);
+
+  return toggle ? (
+    <MenuBtn onClick={handleOnClick} />
+  ) : (
+    <MenuContainer left={menuLeft}>
       <LogoImgBox>
         <NavigationLink to={"/"}>
           <LogoImg src="image/logo.png" alt="logo"></LogoImg>
@@ -71,8 +102,8 @@ function Menu() {
       </LogoImgBox>
       <NavigationBox>
         {/* <NavigationLink to="/intro">
-          <Navigation>Intro</Navigation>
-        </NavigationLink> */}
+            <Navigation>Intro</Navigation>
+          </NavigationLink> */}
         <NavigationLink to="/about">
           <Navigation>About</Navigation>
         </NavigationLink>
