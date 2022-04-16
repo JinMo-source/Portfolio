@@ -14,6 +14,9 @@ const MenuContainer = styled.menu`
   bottom: 0;
   background: #181818;
   color: #fff;
+  @media ${({ theme }) => theme.device.tablet} {
+    display: none;
+  }
 `;
 const LogoImgBox = styled.div`
   width: 100%;
@@ -41,6 +44,7 @@ const NavigationLink = styled(Link)`
     transition: 0.5s;
     color: #aaff00;
   }
+  width: 100%;
   text-decoration: none;
   color: #fff;
 `;
@@ -63,21 +67,21 @@ function Menu() {
         </NavigationLink>
       </LogoImgBox>
       <NavigationBox>
-        <NavigationLink to="/intro">
+        {/* <NavigationLink to="/intro">
           <Navigation>Intro</Navigation>
-        </NavigationLink>
+        </NavigationLink> */}
         <NavigationLink to="/about">
           <Navigation>About</Navigation>
         </NavigationLink>
-        <Navigation>
-          <NavigationLink to="/portfolio">Portfolio</NavigationLink>
-        </Navigation>
-        <Navigation>
-          <NavigationLink to="/stack">Stack</NavigationLink>
-        </Navigation>
-        <Navigation bottom="1px solid #333">
-          <NavigationLink to="/contact">Contact</NavigationLink>
-        </Navigation>
+        <NavigationLink to="/portfolio">
+          <Navigation>Portfolio</Navigation>
+        </NavigationLink>
+        <NavigationLink to="/stack">
+          <Navigation>Stack</Navigation>
+        </NavigationLink>
+        <NavigationLink to="/contact">
+          <Navigation bottom="1px solid #333">Contact</Navigation>
+        </NavigationLink>
       </NavigationBox>
     </MenuContainer>
   );
