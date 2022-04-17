@@ -7,39 +7,56 @@ const BigIntroMyself = styled.h1`
   font-size: 103px;
   font-weight: bold;
   color: #ccf381;
+  @media ${({ theme }) => theme.device.desktop} {
+    font-size: 90px;
+  }
   @media ${({ theme }) => theme.device.tabletL} {
     font-size: 70px;
   }
+  @media ${({ theme }) => theme.device.tabletS} {
+    font-size: 70px;
+  }
   @media ${({ theme }) => theme.device.tablet} {
-    font-size: 40px;
+    font-size: 90px;
   }
 `;
 const SmallIntroMyself = styled.h2`
   font-size: 20px;
   line-height: 50px;
   padding-left: 6px;
+  @media ${({ theme }) => theme.device.desktop} {
+    font-size: 17px;
+    line-height: 30px;
+  }
   @media ${({ theme }) => theme.device.tabletL} {
     font-size: 15px;
     line-height: 15px;
   }
+
   @media ${({ theme }) => theme.device.tablet} {
-    font-size: 7px;
+    font-size: 20px;
     line-height: 7px;
   }
 `;
 
 const IntroImgBox = styled.div`
   width: 30vw;
-  height: 30vh;
+  min-width: 350px;
   text-align: center;
-  border-radius: 50%;
   position: absolute;
   top: ${(props) => props.top};
   right: ${(props) => props.right};
-  margin-top: -25vh;
+  margin-top: -22vh;
   img {
     width: 100%;
   }
+
+  @media ${({ theme }) => theme.device.labtop} {
+    width: 35vw;
+    top: 45vh;
+    right: 5vw;
+  }
+
   @media ${({ theme }) => theme.device.tablet} {
     display: none;
   }

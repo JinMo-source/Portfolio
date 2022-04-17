@@ -30,3 +30,14 @@ const theme = {
 };
 
 export default theme;
+// @media ${({ theme }) => theme.device.tabletS} {
+//   width: 100%;
+//   min-height: 100%;
+//   background: red;
+//   div {
+//     width: 300px;
+//     top: 200px;
+//     left: 50%;
+//     margin-left: -12.5%;
+//     background: red;
+//   }

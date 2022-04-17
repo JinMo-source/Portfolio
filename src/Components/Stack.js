@@ -19,6 +19,14 @@ const StackCotainer = styled.div`
       padding: 10px 3vh;
     }
   }
+
+  @media ${({ theme }) => theme.device.tabletS} {
+    width: 100vw;
+    h2 {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+  }
 `;
 
 const SkillMyself = styled.div`
@@ -43,9 +51,18 @@ const SkillMyself = styled.div`
     height: 15vh;
     font-size: 24px;
     div {
-      width: 30.9999vw;
       p {
         font-size: 20px;
+        padding: 20px 0;
+      }
+    }
+  }
+  @media ${({ theme }) => theme.device.tabletS} {
+    width: 100vw;
+    font-size: 15px;
+    div {
+      p {
+        font-size: 16px;
         padding: 20px 0;
       }
     }
@@ -57,6 +74,9 @@ const Skill = styled.div`
   height: 9vh;
   display: flex;
   position: relative;
+  @media ${({ theme }) => theme.device.tabletS} {
+    width: 100vw;
+  }
 `;
 const SkillName = styled.div`
   width: 10vw;
@@ -64,6 +84,12 @@ const SkillName = styled.div`
   font-weight: bold;
   line-height: 10vh;
   text-align: center;
+  @media ${({ theme }) => theme.device.tabletS} {
+    font-size: 13px;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 13vw;
+  }
 `;
 const SkillPerscent = styled.div`
   width: ${(props) => props.width};
@@ -73,6 +99,9 @@ const SkillPerscent = styled.div`
   top: 50%;
   left: 10vw;
   margin-top: 1px;
+  @media ${({ theme }) => theme.device.tablet} {
+    left: 13vw;
+  }
 `;
 
 function Stack() {

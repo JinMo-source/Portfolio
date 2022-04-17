@@ -16,10 +16,15 @@ export const SectionContainer = styled.section`
     @media ${({ theme }) => theme.device.labtop} {
       font-size: 80px;
     }
+
     @media ${({ theme }) => theme.device.tabletL} {
       font-size: 50px;
     }
+    @media ${({ theme }) => theme.device.tabletS} {
+      left: 20px;
+    }
   }
+
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -30,6 +35,15 @@ export const LeftTextBox = styled.div`
   top: ${(props) => props.top};
   left: ${(props) => props.left};
   margin-top: ${(props) => props.margin};
+  @media ${({ theme }) => theme.device.tabletS} {
+    font-size: 30px;
+    left: 20px;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 100%;
+    padding: 0 20px;
+    left: 0;
+  }
 `;
 
 // Line

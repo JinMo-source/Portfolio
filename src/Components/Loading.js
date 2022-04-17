@@ -25,9 +25,9 @@ const LoadingContainer = styled.div`
   min-height: 50px;
   position: absolute;
   top: 50vh;
-  left: 50vw;
+  left: 50%;
   margin-top: -15vh;
-  margin-left: -25vh;
+  margin-left: -15%;
 `;
 const LoadingImgBox = styled.div`
   width: 30vw;
@@ -40,6 +40,13 @@ const LoadingImgBox = styled.div`
     top: 0;
     img {
       width: 100%;
+    }
+  }
+  @media ${({ theme }) => theme.device.tabletS} {
+    div {
+      width: 300px;
+      min-height: 300px;
+      left: 0;
     }
   }
 `;
@@ -71,6 +78,11 @@ const LoadingPercent = styled.div`
   width: 30vw;
   height: 3px;
   border: 1px solid #222;
+  @media ${({ theme }) => theme.device.tabletS} {
+    width: 400px;
+    margin-top: 100px;
+    margin-left: -50px;
+  }
 `;
 function Loading() {
   return (

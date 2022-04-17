@@ -17,11 +17,21 @@ const ContactText = styled.div`
   p {
     margin-top: 10px;
   }
+  @media ${({ theme }) => theme.device.tabletS} {
+    h2 {
+      font-size: 40px;
+    }
+    span {
+      font-size: 16px;
+    }
+    p {
+      font-size: 17px;
+    }
+  }
 `;
 
 const Form = styled.form`
   width: 30vw;
-  height: 38vh;
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -40,7 +50,34 @@ const Form = styled.form`
     outline: none;
     color: #ccc;
   }
+  @media ${({ theme }) => theme.device.tabletS} {
+    width: 45vw;
+    padding: 0 10px;
+    textarea {
+      height: 200px;
+      width: 45vw;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    display: none;
+  }
 `;
+
+const EmailBox = styled.div`
+  position: absolute;
+  top: ${(props) => props.top};
+  right: 13vw;
+  margin-top: ${(props) => props.margin};
+  @media ${({ theme }) => theme.device.desktop} {
+    font-size: 30px;
+    right: 8vw;
+  }
+  @media ${({ theme }) => theme.device.tabletS} {
+    font-size: 30px;
+    right: 20px;
+  }
+`;
+
 const Input = styled.input`
   &::placeholder {
     color: #ccc;
@@ -53,14 +90,34 @@ const Input = styled.input`
   outline: none;
   color: #ccc;
   margin-right:${(props) => props.margin};
-  position:${(props) => props.position};
-  right:${(props) => props.right};
-  bottom:${(props) => props.bottom};
-  border:${(props) => props.border};
-  border-radius:${(props) => props.radius};
   padding:${(props) => props.padding};
-  cursor:${(props) => props.cursor};
+
+  @media ${({ theme }) => theme.device.tabletS} {
+    width:48%;
+  }
 `;
+const SendInput = styled.input`
+  &::placeholder {
+    color: #ccc;
+  }
+  width: ${(props) => props.width};
+  height: 20px;
+  background: transparent;
+  outline: none;
+  color: #ccc;
+  border: "1px solid #333";
+  border-radius: 3px;
+  cursor: pointer;
+  position: absolute;
+  right: ${(props) => props.right};
+  bottom: ${(props) => props.bottom};
+  padding: ${(props) => props.padding};
+
+  @media ${({ theme }) => theme.device.tabletS} {
+    right: 10px;
+  }
+`;
+
 const Contact = () => {
   const form = useRef();
   const [loadingTime, setLoadingTime] = useState(true);
@@ -103,7 +160,7 @@ const Contact = () => {
           </p>
         </ContactText>
       </LeftTextBox>
-      <LeftTextBox top="42vh" left="58vw" margin="-10vh">
+      <EmailBox top="42vh" margin="-10vh">
         <Form ref={form} onSubmit={sendEmail}>
           <Input
             type="text"
@@ -121,19 +178,16 @@ const Contact = () => {
             width="14.4vw"
           />
           <textarea name="message" placeholder="message" />
-          <Input
+          <SendInput
             type="submit"
             value="Send"
             position="absolute"
             right="0"
-            bottom="0"
+            bottom="-30px"
             padding="2px 10px"
-            border="1px solid #333"
-            radius="3px"
-            cursor="pointer"
           />
         </Form>
-      </LeftTextBox>
+      </EmailBox>
     </SectionContainer>
   );
 };
