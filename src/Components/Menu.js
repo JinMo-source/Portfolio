@@ -128,9 +128,6 @@ function Menu() {
         </NavigationLink>
       </LogoImgBox>
       <NavigationBox>
-        {/* <NavigationLink to="/intro">
-            <Navigation>Intro</Navigation>
-          </NavigationLink> */}
         <NavigationLink to="/about" onClick={handleClose}>
           <Navigation>About</Navigation>
         </NavigationLink>

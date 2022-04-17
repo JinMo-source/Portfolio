@@ -152,7 +152,7 @@ const Contact = () => {
         <ContactText>
           <h2>Contact</h2>
           <br />
-          <span>소중한 시간을 저에게 사용을 해주셔서 봐주셔서 감사합니다.</span>
+          <span>소중한 시간을 저에게 사용을 해주셔서 감사합니다.</span>
           <p>
             Phone : 010-2477-1240
             <br />

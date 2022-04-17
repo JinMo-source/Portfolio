@@ -12,12 +12,19 @@ const PortfolioBox = styled.div`
   margin-top: ${(props) => props.margin};
   display: inline-flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  @media ${({ theme }) => theme.device.tabletS} {
+    width: 100%;
+  }
 `;
 const PortfolioList = styled.div`
   width: 23vw;
   height: 35vh;
   cursor: pointer;
   box-shadow: 0 0 100px 100px rgba(0, 0, 0, 0.1);
+  @media ${({ theme }) => theme.device.tabletS} {
+    width: 33.333%;
+  }
 `;
 
 function Portfolio() {
